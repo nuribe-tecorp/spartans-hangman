@@ -18,6 +18,6 @@ class Hangman
   end
 
   def mostrar_guiones
-    '_______'
+    '_ _ _ _ _ _ _ '
   end
 end

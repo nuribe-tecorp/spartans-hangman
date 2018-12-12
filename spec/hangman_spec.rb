@@ -21,6 +21,10 @@ describe Hangman do
     juego = Hangman.new
     juego.cargar_palabra
     longitud = juego.mostrar_palabra.length
-    juego.mostrar_guiones.count('_').should == longitud
+    juego.mostrar_guiones.count('_ ').should == longitud * 2
+  end
+
+  it 'debe introducir una palabra' do
+
   end
 end
