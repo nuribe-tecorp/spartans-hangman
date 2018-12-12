@@ -1,4 +1,4 @@
-require 'palabra.rb'
+require_relative 'palabra.rb'
 
 class Hangman
   attr_accessor :oportunidades
