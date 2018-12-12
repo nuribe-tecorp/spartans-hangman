@@ -11,9 +11,16 @@ describe Hangman do
     juego.letras_usadas.should == ''
   end
 
-  it 'Cargar palabra manzana' do
+  it 'cargar una palabra' do
     juego = Hangman.new
     juego.cargar_palabra
-    juego.mostrar_palabra.should=='manzana'
+    juego.mostrar_palabra.length > 0
+  end
+
+  it 'debe mostrar guiones' do
+    juego = Hangman.new
+    juego.cargar_palabra
+    longitud = juego.mostrar_palabra.length
+    juego.mostrar_guiones.count('_').should == longitud
   end
 end

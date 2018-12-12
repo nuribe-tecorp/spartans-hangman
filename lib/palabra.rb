@@ -1,9 +1,7 @@
 class Palabra
+  attr_accessor :pista, :palabra
   def initialize
     @pista = 'pista'
-  end
-
-  def pista
-    @pista
+    @palabra = 'palabra'
   end
 end
