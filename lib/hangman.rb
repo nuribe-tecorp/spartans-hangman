@@ -3,10 +3,11 @@ class Hangman
   def initialize
     @oportunidades = 6
     @palabra = Palabra.new
+    @letras_usadas = ''
   end
 
   def letras_usadas
-    return ''
+    @letras_usadas
   end
 
   def cargar_palabra    
@@ -19,5 +20,9 @@ class Hangman
 
   def mostrar_guiones
     '_ _ _ _ _ _ _ '
+  end
+
+  def introducir_letra(letra)
+    @letras_usadas << letra
   end
 end

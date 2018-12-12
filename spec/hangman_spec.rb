@@ -24,7 +24,9 @@ describe Hangman do
     juego.mostrar_guiones.count('_ ').should == longitud * 2
   end
 
-  it 'debe introducir una palabra' do
-
+  it 'debe almacenar letras introducidas' do
+    juego = Hangman.new
+    juego.introducir_letra 'l'
+    juego.letras_usadas.include?('l').should == true
   end
 end
