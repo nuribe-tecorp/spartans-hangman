@@ -1,3 +1,5 @@
+require 'palabra.rb'
+
 class Hangman
   attr_accessor :oportunidades
   def initialize
