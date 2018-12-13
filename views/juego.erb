@@ -4,7 +4,11 @@
 </form>
 
 <h1>
-Bienvenido <%= @@nombre_jugador %>
+<% if (@@juego.mensaje=="Ganaste") %>
+  ¡Ganaste <%= @@nombre_jugador %>!
+<% else %>
+  Bienvenido <%= @@nombre_jugador %>
+<% end %>
 </h1>
 <h2 name='Oportunidades'>Oportunidades: <%= @@juego.oportunidades %></h1>
 <br />
