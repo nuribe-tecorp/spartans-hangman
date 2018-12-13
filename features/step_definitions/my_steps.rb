@@ -16,7 +16,7 @@ end
 
 
 Given("ingresa juego") do
-visit '/juego'
+  visit '/juego'
 end
 
 
