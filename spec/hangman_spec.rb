@@ -75,19 +75,32 @@ describe Hangman do
     juego.mensaje.should =="Letra Incorrecta"
   end
 
-#  it 'debe desplegar mensaje de Gaste cuando no queden quiones' do
-#    juego = Hangman.new
-#    juego.cargar_palabra
+ it 'debe desplegar mensaje de Gaste cuando no queden quiones' do
+    juego = Hangman.new
+   juego.cargar_palabra
 
-#    caracteres=-1
-#    while caracteres<juego.mostrar_palabra.length do
-#      caracteres+=1
-#      juego.introducir_letra(juego.mostrar_palabra[caracteres,1])
+    caracteres=-1
+    while caracteres<juego.mostrar_palabra.length do
+      caracteres+=1
+      juego.introducir_letra(juego.mostrar_palabra[caracteres,1])
 
-#    end
+    end
 
-#    juego.mensaje.should =="Ganaste"
-#  end
+    juego.mensaje.should =="Ganaste"
+  end
+  it 'debe desplegar mensaje de Persidte cuando se acaben las oportunidades' do
+     juego = Hangman.new
+    juego.cargar_palabra
+
+     caracteres=-1
+     while caracteres<juego.mostrar_palabra.length do
+
+       juego.introducir_letra(";")
+      caracteres+=1
+     end
+
+     juego.mensaje.should =="Perdiste"
+   end
 
   it 'debe cargar distintas palabras' do
     juego = Hangman.new
