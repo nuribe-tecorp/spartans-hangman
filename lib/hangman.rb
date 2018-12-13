@@ -25,9 +25,9 @@ class Hangman
       @guiones << '_'
     end
   end
-  def cargar_palabra2(nombre)
+  def cargar_palabra2(nombre,pista)
 
-    @palabra = Palabra.new(nombre, '')
+    @palabra = Palabra.new(nombre, pista)
 
 
     @palabra.palabra.length.times do

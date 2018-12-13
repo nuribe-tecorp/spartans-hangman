@@ -18,7 +18,7 @@ end
 get '/juego' do
 
   unless(params[:palabra])== nil
-      @@juego.cargar_palabra2(params[:palabra])
+      @@juego.cargar_palabra2(params[:palabra],params[:pista])
   end
 
 
