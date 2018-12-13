@@ -31,7 +31,8 @@ class Hangman
 
   def mostrar_guiones
     caracteres=-1
-      guiones=""
+    guiones = ""
+    return guiones if @palabra == nil
     while caracteres<@palabra.palabra.length do
         caracteres+=1
         letra=@palabra.palabra[caracteres,1]
