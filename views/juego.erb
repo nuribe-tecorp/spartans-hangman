@@ -1,8 +1,14 @@
+<form method='post' action='/pista'>
+  <input type="submit" name="pista" value="pista">
+</form>
 <form method='get' action='/juego' >
 <h1 name='Oportunidades'>Oportunidades: <%= @@juego.oportunidades %></h1>
 <br />
-pista<input type="button" name="pista" value="pista">
 <br />
+<% if (@mostrar_pista) %>
+  Pista: <%= @@juego.mostrar_pista %>  
+<% end %>
+<br/>
 espacios: <h1><%= @@juego.mostrar_guiones %></h1>
 <br />
 letra:

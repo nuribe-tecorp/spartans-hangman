@@ -17,3 +17,9 @@ Feature: Juego ahorcado
     When ingreso la letra 'm' en el campo 'nletra'
       And presiono el boton "Letra"
     Then deberia ver algun 'm'
+
+  Scenario: Quiero visualizar pista
+    Given visito la pagina principal
+      And ingresa juego
+    When presiono el boton "pista"
+    Then deberia ver algun 'Pista:'

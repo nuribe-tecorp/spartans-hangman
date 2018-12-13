@@ -3,7 +3,7 @@ Given("visito la pagina principal") do
 end
 
 Then("deberia visualizar el boton {string}") do |boton|
-  last_response.body.should =~ /inicio/m
+  last_response.should have_xpath("//input[@name=\"#{boton}\"]")
 end
 
 Then("deberia ver algun {string}") do |string|
@@ -24,8 +24,8 @@ Then("deberia cargar el numero de {string}") do |string|
   last_response.body.should contain(string)
 end
 
-Then("deberia cargar el boton {string}") do |string|
-  last_response.body.should contain(string)
+Then("deberia cargar el boton {string}") do |boton|
+  last_response.should have_xpath("//input[@name=\"#{boton}\"]")
 end
 
 Then("deberia cargar los {string} de letras") do |string|
