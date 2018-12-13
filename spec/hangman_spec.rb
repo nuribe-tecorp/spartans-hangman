@@ -26,7 +26,16 @@ describe Hangman do
 
   it 'debe almacenar letras introducidas' do
     juego = Hangman.new
+    juego.cargar_palabra
     juego.introducir_letra 'l'
     juego.letras_usadas.include?('l').should == true
+  end
+
+  it 'debe rellenar letra correcta en guiones' do
+    juego = Hangman.new
+    juego.cargar_palabra
+    letra = juego.mostrar_palabra[0]
+    juego.introducir_letra(letra)
+    juego.mostrar_guiones.include?(letra).should == true
   end
 end

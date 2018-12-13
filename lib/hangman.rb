@@ -15,7 +15,11 @@ class Hangman
   end
 
   def cargar_palabra
+    @guiones = ''
     @palabra.palabra = 'manzana'
+    @palabra.palabra.length.times do
+      @guiones << '_'
+    end
   end
 
   def mostrar_palabra
@@ -54,5 +58,8 @@ class Hangman
     end
 
     @letras_usadas << letra
+    @palabra.palabra.length.times do |i|
+      @guiones[i] = letra if @palabra.palabra[i] == letra
+    end
   end
 end
