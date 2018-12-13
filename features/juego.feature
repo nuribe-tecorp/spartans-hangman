@@ -6,3 +6,15 @@ Feature: Juego ahorcado
     Given visito la pagina principal
     When presiono el boton "inicio"
     Then deberia ver algun "_"
+
+    Scenario: cargar juego
+      Given ingresa juego
+      Then deberia cargar el numero de "Oportunidades"
+      And deberia cargar el boton "pista"
+      And deberia cargar los "espacios" de letras
+      And deberia cargar las "letras" usadas
+      And deberia cargar las "letras" usadas
+
+  Scenario: introducir letras
+    Given Carga el juego con nueva letra
+    When presiono el boton "Letra"

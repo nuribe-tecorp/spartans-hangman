@@ -17,12 +17,12 @@ describe Hangman do
     juego.mostrar_palabra.length > 0
   end
 
-  it 'debe mostrar guiones' do
-    juego = Hangman.new
-    juego.cargar_palabra
-    longitud = juego.mostrar_palabra.length
-    juego.mostrar_guiones.count('_ ').should == longitud * 2
-  end
+  #it 'debe mostrar guiones' do
+  #  juego = Hangman.new
+  #  juego.cargar_palabra
+  #  longitud = juego.mostrar_palabra.length
+  #  juego.mostrar_guiones.count('_ ').should == longitud * 2
+  #end
 
   it 'debe almacenar letras introducidas' do
     juego = Hangman.new
