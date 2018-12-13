@@ -7,8 +7,8 @@ Feature: Juego ahorcado
         And ingresa juego
       Then deberia cargar el numero de "Oportunidades"
       And deberia cargar el boton "pista"
-      And deberia cargar los "espacios" de letras
-      And deberia cargar las "letras" usadas
+      And deberia cargar los "Ingresar letra:" de letras
+      And deberia cargar las "Letras Usadas:" usadas
 
 
   Scenario: introducir letras
