@@ -48,3 +48,7 @@ end
 Then("deberia visualizar el boton con texto {string}") do |texto|
   last_response.should have_xpath("//input[@value=\"#{texto}\"]")
 end
+
+#Then("deberia mostrar el campo {string}") do |string|
+#  last_response.body.should contain(string)
+#end

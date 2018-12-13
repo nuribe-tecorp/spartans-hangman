@@ -16,6 +16,10 @@ end
 
 
 get '/juego' do
+  unless(params[:palabra])== nil
+      @@juego.cargar_palabra2(params[:palabra])
+  end
+
   @@juego.introducir_letra(params[:nletra]) unless params[:nletra] == nil
   erb :juego
 end
@@ -28,5 +32,9 @@ end
 post '/pista' do
   @mostrar_pista = true
   @@juego.oportunidades -= 1
-  erb :juego  
+  erb :juego
+end
+
+get '/nuevapalabra' do
+  erb :nuevapalabra
 end
