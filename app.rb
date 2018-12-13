@@ -3,6 +3,7 @@ require './lib/hangman.rb'
 
 
 get '/' do
+  @mostrar_pista = false
   @@juego = Hangman.new
   @@juego.cargar_palabra
   erb :inicio
@@ -22,4 +23,9 @@ end
 post '/reiniciar' do
   @@juego.cargar_palabra
   erb :juego
+end
+
+post '/pista' do
+  @mostrar_pista = true
+  erb :juego  
 end

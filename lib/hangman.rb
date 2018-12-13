@@ -25,6 +25,10 @@ class Hangman
     end
   end
 
+  def mostrar_pista
+    @palabra.pista
+  end
+
   def mostrar_palabra
     @palabra.palabra
   end
