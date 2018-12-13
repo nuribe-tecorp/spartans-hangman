@@ -27,5 +27,6 @@ end
 
 post '/pista' do
   @mostrar_pista = true
+  @@juego.oportunidades -= 1
   erb :juego  
 end
