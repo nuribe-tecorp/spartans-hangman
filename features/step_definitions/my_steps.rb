@@ -1,5 +1,5 @@
 Given("visito la pagina principal") do
-visit '/'
+  visit '/'
 end
 
 Then("deberia visualizar el boton {string}") do |boton|
@@ -39,4 +39,8 @@ end
 
 Given("Carga el juego con nueva letra") do
   visit '/juego'
+end
+
+When("ingreso la letra {string} en el campo {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
 end

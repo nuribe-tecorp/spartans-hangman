@@ -5,9 +5,12 @@ class Hangman
   attr_accessor :mensaje
   def initialize
     @oportunidades = 6
-    @palabra = Palabra.new
     @letras_usadas = ''
     @mensaje = ""
+    @palabras = []
+    @palabras << Palabra.new('manzana', 'fruta')
+    @palabras << Palabra.new('libro', 'literatura')
+    @palabras << Palabra.new('computadora', 'equipo electronico')
   end
 
   def letras_usadas
@@ -16,7 +19,7 @@ class Hangman
 
   def cargar_palabra
     @guiones = ''
-    @palabra.palabra = 'manzana'
+    @palabra = @palabras.pop
     @palabra.palabra.length.times do
       @guiones << '_'
     end
@@ -28,7 +31,8 @@ class Hangman
 
   def mostrar_guiones
     caracteres=-1
-      guiones=""
+    guiones = ""
+    return guiones if @palabra == nil
     while caracteres<@palabra.palabra.length do
         caracteres+=1
         letra=@palabra.palabra[caracteres,1]

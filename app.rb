@@ -15,12 +15,6 @@ end
 
 get '/juego' do
   @@juego.cargar_palabra
-  if(params[:nletra] != nil)
-    @@juego.introducir_letra(params[:nletra])
-  end
-
-
-  #@@juego = Hangman.new
-  #@@juego.cargar_palabra
+  @@juego.introducir_letra(params[:nletra]) unless params[:nletra] == nil
   erb :juego
 end
