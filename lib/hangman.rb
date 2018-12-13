@@ -19,7 +19,8 @@ class Hangman
 
   def cargar_palabra
     @guiones = ''
-    @palabra = @palabras.pop
+    random = Random.new
+    @palabra = @palabras[random.rand(@palabras.length - 1)]
     @palabra.palabra.length.times do
       @guiones << '_'
     end
