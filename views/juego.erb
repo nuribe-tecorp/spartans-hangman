@@ -3,9 +3,12 @@
   <input type="submit" name="pista" value="pista">
 </form>
 <form method='get' action='/juego' >
-<h1 name='Oportunidades'>Oportunidades: <%= @@juego.oportunidades %></h1>
+<h1>
+Bienvenido <%= @@nombre_jugador %>
+</h1>
+<h2 name='Oportunidades'>Oportunidades: <%= @@juego.oportunidades %></h1>
 <br />
-<table>
+<table>  
   <tr>
     <th>
       <img src="../img/<%if(@@juego.mensaje=="Ganaste")%>7<% else %><%= @@juego.oportunidades %><%   end %>0.jpg" alt="<%= @@juego.oportunidades %>">

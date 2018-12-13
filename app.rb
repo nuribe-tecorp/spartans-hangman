@@ -16,6 +16,7 @@ end
 
 
 get '/juego' do
+  @@nombre_jugador = params['nombre']
   @@juego.introducir_letra(params[:nletra]) unless params[:nletra] == nil
   erb :juego
 end
