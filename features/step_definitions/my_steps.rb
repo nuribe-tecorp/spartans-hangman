@@ -40,3 +40,7 @@ end
 Given("Carga el juego con nueva letra") do
   visit '/juego'
 end
+
+When("ingreso la letra {string} en el campo {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
+end

@@ -16,5 +16,11 @@ Feature: Juego ahorcado
       And deberia cargar las "letras" usadas
 
   Scenario: introducir letras
-    Given Carga el juego con nueva letra
-    When presiono el boton "Letra"
+    Given ingresa juego
+    When ingreso la letra 'm' en el campo 'nletra'
+      And presiono el boton "Letra"
+    Then deberia ver algun 'm'
+
+  # Scenario: Cuando reinicio el juego, carga nueva palabra
+  #   Given ingresa juego
+  #     And 
