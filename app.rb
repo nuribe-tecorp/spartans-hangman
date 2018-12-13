@@ -31,3 +31,10 @@ post '/pista' do
   @@juego.oportunidades -= 1
   erb :juego  
 end
+
+post '/nuevojuego' do  
+  @mostrar_pista = false
+  @@juego = Hangman.new
+  @@juego.cargar_palabra
+  erb :juego
+end
