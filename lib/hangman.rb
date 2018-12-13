@@ -34,44 +34,30 @@ class Hangman
   end
 
   def mostrar_guiones
-    caracteres=-1
+    caracteres = -1
     guiones = ""
     return guiones if @palabra == nil
-    while caracteres<@palabra.palabra.length do
-        caracteres+=1
-        letra=@palabra.palabra[caracteres,1]
-        if(@letras_usadas[letra])
-          guiones << letra+" "
+    while caracteres < @palabra.palabra.length do
+        caracteres += 1
+        letra = @palabra.palabra[caracteres, 1]
+        if (@letras_usadas.include?(letra))
+          guiones << letra + " "
         else
           guiones << "_ "
         end
-
     end
     guiones
-    #'_ _ _ _ _ _ _ '
   end
 
   def introducir_letra(letra)
-    if( @palabra.palabra[letra])
-      @mensaje="Letra Correcta"
-      if(!mostrar_guiones["_"])
-          @mensaje = "Ganaste"
-        end
+    if (@palabra.palabra.include?(letra))
+      @mensaje = "Letra Correcta"
+      @mensaje = "Ganaste" unless mostrar_guiones.include?("_")
     else
-      @oportunidades-=1
-      @mensaje="Letra Incorrecta"
-      if(@oportunidades<=0)
-          @mensaje="Perdiste"
-      end
+      @oportunidades -= 1
+      @mensaje = "Letra Incorrecta"
+      @mensaje = "Perdiste" if @oportunidades <= 0
     end
-
-
-
-
-
     @letras_usadas << letra
-    @palabra.palabra.length.times do |i|
-      @guiones[i] = letra if @palabra.palabra[i] == letra
-    end
   end
 end
