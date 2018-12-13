@@ -1,8 +1,4 @@
 
-<form method='post' action='/pista'>
-  <input type="submit" name="pista" value="pista">
-</form>
-
 <h1>
 <% if (@@juego.mensaje=="Ganaste") %>
   ¡Ganaste <%= @@nombre_jugador %>!
@@ -20,7 +16,9 @@
     <th>
       <h1><%= @@juego.mostrar_guiones %></h1>
       <br />
-
+      <form method='post' action='/pista'>
+        <input type="submit" name="pista" value="pista">
+      </form>
       <% if (@mostrar_pista) %>
         Pista: <%= @@juego.mostrar_pista %>
       <% end %>
