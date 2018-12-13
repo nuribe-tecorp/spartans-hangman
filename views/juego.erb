@@ -1,6 +1,4 @@
-<head>
-  <link rel="stylesheet" href="/css/master.css">
-</head>
+
 <form method='post' action='/pista'>
   <input type="submit" name="pista" value="pista">
 </form>
@@ -15,7 +13,7 @@
     <th>
       <h1><%= @@juego.mostrar_guiones %></h1>
       <br />
-    ///
+  
       <% if (@mostrar_pista) %>
         Pista: <%= @@juego.mostrar_pista %>
       <% end %>
