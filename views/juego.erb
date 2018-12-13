@@ -21,7 +21,8 @@ Bienvenido <%= @@nombre_jugador %>
         Pista: <%= @@juego.mostrar_pista %>
       <% end %>
       <br />
-      <form method='get' action='/juego' >
+      <form method='get' action='/juego' >      
+      <input type="hidden" name="nombre" value="<%= @@nombre_jugador %>">
       Ingresar letra:
       <input type="text" name="nletra" value="">
       <input type="submit" name="Letra" value="Letra">
@@ -34,7 +35,8 @@ Bienvenido <%= @@nombre_jugador %>
   </tr>
   <tr>  
     <th>
-    <form method='post' action='/nuevojuego' >       
+    <form method='post' action='/nuevojuego' > 
+    <% @@nombre_jugador %>      
           <% if (@@juego.mensaje=="Ganaste") %> 
             <input type="submit" name="jugardenuevo" value="jugar de nuevo">
           <% end %>      
