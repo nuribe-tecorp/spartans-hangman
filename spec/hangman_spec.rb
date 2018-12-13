@@ -88,6 +88,7 @@ describe Hangman do
 
     juego.mensaje.should =="Ganaste"
   end
+
   it 'debe desplegar mensaje de Persidte cuando se acaben las oportunidades' do
      juego = Hangman.new
     juego.cargar_palabra

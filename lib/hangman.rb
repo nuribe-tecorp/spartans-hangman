@@ -51,6 +51,7 @@ class Hangman
   end
 
   def introducir_letra(letra)
+    @letras_usadas << letra
     if (@palabra.palabra.include?(letra))
       @mensaje = "Letra Correcta"
       @mensaje = "Ganaste" unless mostrar_guiones.include?("_")
@@ -59,6 +60,6 @@ class Hangman
       @mensaje = "Letra Incorrecta"
       @mensaje = "Perdiste" if @oportunidades <= 0
     end
-    @letras_usadas << letra
+
   end
 end

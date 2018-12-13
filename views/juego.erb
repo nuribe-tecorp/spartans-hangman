@@ -8,12 +8,12 @@
 <table>
   <tr>
     <th>
-      <img src="../img/<%= @@juego.oportunidades %>0.jpg" alt="<%= @@juego.oportunidades %>">
+      <img src="../img/<%if(@@juego.mensaje=="Ganaste")%>7<% else %><%= @@juego.oportunidades %><%   end %>0.jpg" alt="<%= @@juego.oportunidades %>">
     </th>
     <th>
       <h1><%= @@juego.mostrar_guiones %></h1>
       <br />
-  
+
       <% if (@mostrar_pista) %>
         Pista: <%= @@juego.mostrar_pista %>
       <% end %>
@@ -27,8 +27,6 @@
       <%= @@juego.mensaje %>
     </th>
   </tr>
-
-
 </table>
 
 </form>
