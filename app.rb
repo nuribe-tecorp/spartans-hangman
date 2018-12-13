@@ -16,9 +16,13 @@ end
 
 
 get '/juego' do
+
   unless(params[:palabra])== nil
       @@juego.cargar_palabra2(params[:palabra])
   end
+
+
+  @@nombre_jugador = params['nombre']
 
   @@juego.introducir_letra(params[:nletra]) unless params[:nletra] == nil
   erb :juego
@@ -32,9 +36,18 @@ end
 post '/pista' do
   @mostrar_pista = true
   @@juego.oportunidades -= 1
+
   erb :juego
 end
 
 get '/nuevapalabra' do
   erb :nuevapalabra
+
+end
+
+post '/nuevojuego' do
+  @mostrar_pista = false
+  @@juego = Hangman.new
+  @@juego.cargar_palabra
+  erb :juego
 end
