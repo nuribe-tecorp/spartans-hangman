@@ -20,7 +20,3 @@ Feature: Juego ahorcado
     When ingreso la letra 'm' en el campo 'nletra'
       And presiono el boton "Letra"
     Then deberia ver algun 'm'
-
-  # Scenario: Cuando reinicio el juego, carga nueva palabra
-  #   Given ingresa juego
-  #     And 
