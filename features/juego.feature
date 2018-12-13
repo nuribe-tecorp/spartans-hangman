@@ -30,6 +30,6 @@ Feature: Juego ahorcado
     #Then deberia mostrar el campo "palabra"
 
     Scenario: iniciar juego con nueva palabra
-      Given visito la pagina nuevapalabra
+      #Given visito la pagina nuevapalabra
       #When presiono el boton "btningresarpalabra"
       #Then deberia mostrar el campo "palabra"
