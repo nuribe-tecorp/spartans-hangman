@@ -46,11 +46,11 @@ class Hangman
   def introducir_letra(letra)
     if( @palabra.palabra[letra])
       @mensaje="Letra Correcta"
-      #if(@palabra.palabra["_ "])
-      #    @mensaje=mensaje
+      if(!@palabra.palabra["_ "])
+         #@mensaje=mensaje
       #  else
-      #    @mensaje="Ganaste"
-      #end
+        #  @mensaje << "Ganaste"
+      end
     else
       @oportunidades-=1
       @mensaje="Letra Incorrecta"

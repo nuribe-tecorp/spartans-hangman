@@ -74,5 +74,17 @@ describe Hangman do
     juego.mensaje.should =="Letra Incorrecta"
   end
 
-  
+#  it 'debe desplegar mensaje de Gaste cuando no queden quiones' do
+#    juego = Hangman.new
+#    juego.cargar_palabra
+
+#    caracteres=-1
+#    while caracteres<juego.mostrar_palabra.length do
+#      caracteres+=1
+#      juego.introducir_letra(juego.mostrar_palabra[caracteres,1])
+
+#    end
+
+#    juego.mensaje.should =="Ganaste"
+#  end
 end
