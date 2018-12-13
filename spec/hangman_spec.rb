@@ -38,4 +38,13 @@ describe Hangman do
     juego.introducir_letra(letra)
     juego.mostrar_guiones.include?(letra).should == true
   end
+
+  it 'debe cargar distintas palabras' do
+    juego = Hangman.new
+    juego.cargar_palabra
+    primera = juego.mostrar_palabra
+    juego.cargar_palabra
+    segunda = juego.mostrar_palabra
+    (primera != segunda).should == true
+  end
 end
