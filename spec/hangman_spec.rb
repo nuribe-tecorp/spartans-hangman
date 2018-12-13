@@ -38,4 +38,41 @@ describe Hangman do
     juego.introducir_letra(letra)
     juego.mostrar_guiones.include?(letra).should == true
   end
+
+  it 'debe disminuir la oportunidad en 1 si la letra falla' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    oportunidad=juego.oportunidades
+    juego.introducir_letra(";")
+    juego.oportunidades.should ==oportunidad-1
+  end
+
+  it 'debe disminuir la oportunidad en 1 si la letra falla' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    oportunidad=juego.oportunidades
+    juego.introducir_letra(";")
+    juego.oportunidades.should ==oportunidad-1
+  end
+
+  it 'debe desplegar mensaje de letra correcta cuando la letra intoducida es correcta' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    letra = juego.mostrar_palabra[0]
+    juego.introducir_letra(letra)
+    juego.mensaje.should =="Letra Correcta"
+  end
+  it 'debe desplegar mensaje de letra Incorrecta cuando la letra intoducida es Incorrecta' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    letra = juego.mostrar_palabra[0]
+    juego.introducir_letra(";")
+    juego.mensaje.should =="Letra Incorrecta"
+  end
+
+  
 end

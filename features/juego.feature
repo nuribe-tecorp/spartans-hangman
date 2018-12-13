@@ -13,8 +13,9 @@ Feature: Juego ahorcado
       And deberia cargar el boton "pista"
       And deberia cargar los "espacios" de letras
       And deberia cargar las "letras" usadas
-      And deberia cargar las "letras" usadas
+
 
   Scenario: introducir letras
     Given Carga el juego con nueva letra
     When presiono el boton "Letra"
+    Then 'oportunidades' deberia disminuir en 1 si no es correcta
