@@ -4,22 +4,29 @@
 <form method='get' action='/juego' >
 <h1 name='Oportunidades'>Oportunidades: <%= @@juego.oportunidades %></h1>
 <br />
-<br />
+<table>
+  <tr>
+    <th>
+      <img src="../img/<%= @@juego.oportunidades %>0.jpg" alt="<%= @@juego.oportunidades %>">
+    </th>
+    <th>
+      <h1><%= @@juego.mostrar_guiones %></h1>
+      <br />
+      <% if (@mostrar_pista) %>
+        Pista: <%= @@juego.mostrar_pista %>
+      <% end %>
+      <br />
+      Ingresar letra:
+      <input type="text" name="nletra" value="a">
+      <input type="submit" name="Letra" value="Letra">
+      <br />
+      Letras Usadas: <%= @@juego.letras_usadas %>
+      <br />
+      <%= @@juego.mensaje %>
+    </th>
+  </tr>
 
-<img src="../img/<%= @@juego.oportunidades %>0.jpg" alt="<%= @@juego.oportunidades %>">
 
-<% if (@mostrar_pista) %>
-  Pista: <%= @@juego.mostrar_pista %>
-<% end %>
-<br/>
+</table>
 
-espacios: <h1><%= @@juego.mostrar_guiones %></h1>
-<br />
-letra:
-<input type="text" name="nletra" value="a">
-<input type="submit" name="Letra" value="Letra">
-<br />
-letras: <%= @@juego.letras_usadas %>
-<br />
-<%= @@juego.mensaje %>
 </form>
