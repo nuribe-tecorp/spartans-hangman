@@ -44,3 +44,7 @@ end
 When("ingreso la letra {string} en el campo {string}") do |valor, campo|
   fill_in(campo, :with => valor)
 end
+
+Then("deberia visualizar el boton con texto {string}") do |texto|
+  last_response.should have_xpath("//input[@value=\"#{texto}\"]")
+end
