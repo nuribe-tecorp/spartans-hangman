@@ -39,6 +39,56 @@ describe Hangman do
     juego.mostrar_guiones.include?(letra).should == true
   end
 
+
+  it 'debe disminuir la oportunidad en 1 si la letra falla' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    oportunidad=juego.oportunidades
+    juego.introducir_letra(";")
+    juego.oportunidades.should ==oportunidad-1
+  end
+
+  it 'debe disminuir la oportunidad en 1 si la letra falla' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    oportunidad=juego.oportunidades
+    juego.introducir_letra(";")
+    juego.oportunidades.should ==oportunidad-1
+  end
+
+  it 'debe desplegar mensaje de letra correcta cuando la letra intoducida es correcta' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    letra = juego.mostrar_palabra[0]
+    juego.introducir_letra(letra)
+    juego.mensaje.should =="Letra Correcta"
+  end
+  it 'debe desplegar mensaje de letra Incorrecta cuando la letra intoducida es Incorrecta' do
+    juego = Hangman.new
+    juego.cargar_palabra
+
+    letra = juego.mostrar_palabra[0]
+    juego.introducir_letra(";")
+    juego.mensaje.should =="Letra Incorrecta"
+  end
+
+#  it 'debe desplegar mensaje de Gaste cuando no queden quiones' do
+#    juego = Hangman.new
+#    juego.cargar_palabra
+
+#    caracteres=-1
+#    while caracteres<juego.mostrar_palabra.length do
+#      caracteres+=1
+#      juego.introducir_letra(juego.mostrar_palabra[caracteres,1])
+
+#    end
+
+#    juego.mensaje.should =="Ganaste"
+#  end
+
   it 'debe cargar distintas palabras' do
     juego = Hangman.new
     juego.cargar_palabra
@@ -47,4 +97,5 @@ describe Hangman do
     segunda = juego.mostrar_palabra
     (primera != segunda).should == true
   end
+
 end
